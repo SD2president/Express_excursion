@@ -26,6 +26,10 @@ app.get('/', (req, res) => {
 const destinationsController = require('./controllers/destinations_controller')
 app.use('/destinations', destinationsController)
 
+//404 Page
+app.get('*', (req,res) => {
+    res.send('404') // we can add page for this later
+})
 
 app.listen(PORT, () => {
     console.log(`listening on port ${PORT}`)

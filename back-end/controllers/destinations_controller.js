@@ -15,10 +15,10 @@ destinations.get('/', async (req, res) => {
 })
 
 // FIND A DESTINATION
-destinations.get('/:destination_id', async (req, res) => {
+destinations.get('/:name', async (req, res) => {
     try {
         const foundDestination = await Destination.findOne({
-            where: {destination_id: req.params.destination_id}        
+            where: {name: req.params.name}        
         })
         res.status(200).json(foundDestination)
     } catch(Error) {

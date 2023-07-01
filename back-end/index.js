@@ -26,6 +26,9 @@ app.get('/', (req, res) => {
 const destinationsController = require('./controllers/destinations_controller')
 app.use('/destinations', destinationsController)
 
+const continentsController = require('./controllers/continent_controllers')
+app.use('/continents', continentsController)
+
 
 app.listen(PORT, () => {
     console.log(`listening on port ${PORT}`)

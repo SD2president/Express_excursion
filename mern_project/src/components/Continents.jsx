@@ -5,11 +5,14 @@ function Continents() {
     let continentList = [
         { id: 1, name: 'Africa' },
         { id: 2, name: 'Asia' },
-        { id: 3, name: 'Austrailia' },
+        { id: 3, name: 'Australia' },
         { id: 4, name: 'Europe' },
         { id: 5, name: 'North America' },
         { id: 6, name: 'South America' }
     ]
+
+
+
 
     return (
 
@@ -23,6 +26,9 @@ function Continents() {
                     </li>
                 ))}
             </ul>
+            <a href={`/newdestination`}>
+                <button>Add New Destination</button>  
+            </a>
         </div>
     )
 }

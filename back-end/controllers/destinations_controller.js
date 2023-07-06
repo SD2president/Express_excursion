@@ -30,7 +30,7 @@ destinations.get('/:name', async (req, res) => {
 // CREATE A DESTINATION
 destinations.post('/', async (req, res) => {
     try {
-        const newDestination = await Destination.update(req.body)
+        const newDestination = await Destination.create(req.body)
         res.status(200).json({
             message: 'Successfully created a new destination',
             data: newDestination
@@ -41,11 +41,11 @@ destinations.post('/', async (req, res) => {
 })
 
 // UPDATE A DESTINATION
-destinations.put('/:destination_id', async (req, res) => {
+destinations.put('/:name', async (req, res) => {
     try {
         const updatedDestination = await Destination.update(req.body, {
             where: {
-                destination_id: req.params.destination_id
+                name: req.params.name
             }
         })
         res.status(200).json({
@@ -57,13 +57,14 @@ destinations.put('/:destination_id', async (req, res) => {
 })
 
 // DELETE A DESTINATION
-destinations.delete('/:destination_id', async (req, res) => {
+destinations.delete('/:name', async (req, res) => {
     try {
         const deletedDestination = await Destination.destroy({
             where: {
-                destination_id: req.params.destination_id
+                name: req.params.name
             }
         })
+
         res.status(200).json({
             message: `Successfully deleted ${deletedDestination}`
         })

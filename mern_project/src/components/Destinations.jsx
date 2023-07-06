@@ -6,6 +6,7 @@ function Destinations() {
     const [destinations, setDestinations] = useState([])
     const { name} = useParams()
 
+    //GET THE DESTINATIONS FROM THE DB WHERE ALL ARE FORM THE SAME CONTINENT
     const getDestinations = async () => {
         try {
             const findDestinations = await fetch(`http://localhost:4000/continents/${name}`)
@@ -13,8 +14,8 @@ function Destinations() {
             setDestinations(jsonData)
         } catch (Error) {
             console.log(Error)
-
         }
+        
     }
 
     useEffect(() => {
@@ -22,12 +23,12 @@ function Destinations() {
     }, [])
 
 
-
+//TAKES THE DESTINATIONS FROM DB ABOVE AND MAKES A LIST OF LINKS 
     const getDestinationList = destinations.map((destination, i) => {
         return (
             <div key={i}>
                 <li>
-                    <Link to = {`/continent/${destination.name}` }>
+                    <Link to = {`/destination/${destination.name}` }>
                         {destination.name}
                     </Link>
                 </li>

@@ -1,6 +1,6 @@
 //Dependencies
 const destination = require('express').Router()
-const db = require('../models')
+const db = require('../../back-end/models')
 const { Comment } = db
 
 //Comments routes
@@ -10,7 +10,7 @@ destination.get('/:id', (req, res) => {
     .populate('comments')
     .then(destination => {
         console.log(destination.comments)
-        //where do we show destinations?
+        res.render('components/Destination', {destination})
     })
     .catch(err => {
         console.log('err', err)
@@ -28,7 +28,7 @@ destination.post('/:id/comment', (req, res) => {
             destination.comments.push(comment.id)
             destination.save()
             .then(() => {
-                //Where to direct/render
+                res.redirect('components/Destination', {destination})
             })
         })
         .catch(err => {
@@ -53,7 +53,7 @@ destination.put('/:id', (req, res) => {
 destination.delete('/:id', (req, res) => {
     db.Destination.findByIdAndDelete(req.params.id)
     .then(destination => {
-        res.redirect('destinations')
+        res.redirect('destination')
     })
     .catch(err => {
         console.log('err', err)

@@ -22,24 +22,24 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     continent_name: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
   },
     country_name: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
   },
     description: {
       type: DataTypes.TEXT,
-      allowNull: false
+      allowNull: true
   },
     author:{
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
   },
     date_posted: {
       type: DataTypes.DATE,
       timestamps: false,
-      allowNull: false
+      allowNull: true
   },
   picture: {
     type: DataTypes.TEXT

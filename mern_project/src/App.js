@@ -1,11 +1,15 @@
 
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes, useParams } from 'react-router-dom'
+
 import './App.css';
 //Components
 import Destination from './components/Destination'
 import Destinations from './components/Destinations'
 import Continents from './components/Continents'
+import NewDestination from './components/NewDestination'
+import Edit from './components/Edit'
 
+const title = 'Express Excursions'
 
 function App() {
   return (
@@ -14,7 +18,9 @@ function App() {
         <Routes>
           <Route path='/continents' element={<Continents/>} />
           <Route path='/continents/:name' element={<Destinations/>} />
-          <Route path='/continent/:name' element={<Destination/>} />
+          <Route path='/destination/:name' element={<Destination/>} />
+          <Route path='/newdestination' element={<NewDestination/>} />
+          <Route path='/edit/:name' element={<Edit/>} />
         </Routes>
       </Router>
     </div>

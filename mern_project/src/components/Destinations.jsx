@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 
+
+
 function Destinations() {
 
     const [destinations, setDestinations] = useState([])

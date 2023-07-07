@@ -36,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true
   },
-    date_posted: {
+    date_visited: {
       type: DataTypes.DATE,
       timestamps: false,
       allowNull: true

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
-import Edit from './Edit'
+import Button from 'react-bootstrap/Button'
+
+
 
 //GETS A SINGLE DESTINATION FROM THE DB
 function Destination() {
@@ -42,13 +44,14 @@ function Destination() {
             <p>{destination.country_name} </p>
             <p>{destination.picture} </p>
             <p>{destination.author} </p>
-            <p>{destination.date} </p>
+            <p>{destination.date_visited} </p>
             <div>
-                <button onClick={deleteDestination}>DELETE</button>
+                <Button variant="danger" onClick={deleteDestination}>
+                <i className="fa-regular fa-trash-can"></i>  DELETE</Button>
             </div>
             <div>
                 <Link to={`/edit/${destination.name}`}>
-                    <button>Edit</button>
+                    <Button variant="success"><i className="fa-solid fa-pen-to-square"></i>  Edit</Button>
                 </Link>
             </div>
         </div>

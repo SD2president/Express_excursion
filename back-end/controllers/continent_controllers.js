@@ -3,7 +3,6 @@ const continents = require('express').Router()
 const db = require('../models')
 const { Destination } = db 
 
-
 // FIND ALL DESTINATIONS ON SAME CONTINENT
 continents.get('/:continent_name', async (req, res) => {
     try {

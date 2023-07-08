@@ -45,6 +45,7 @@ function Destinations() {
             <ul>
                 {getDestinationList}
             </ul>
+            <Link to = {`/continents` }> Back to Continents</Link>
         </div>
     )
 }

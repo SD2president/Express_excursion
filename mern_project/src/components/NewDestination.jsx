@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate,Link } from 'react-router-dom'
 import "react-datepicker/dist/react-datepicker.css"
 import DatePicker from 'react-datepicker'
 import Form from 'react-bootstrap/Form'
@@ -119,6 +119,9 @@ function NewDestination() {
                 </Form.Group>
                 <Button variant="primary" type='submit'>Submit</Button>{' '}
             </Form>
+            <Link to={'/continents'}>
+                    <Button variant="danger">Cancel</Button>
+                </Link>
         </>
     )
 }

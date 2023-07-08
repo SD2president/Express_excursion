@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams,Link } from 'react-router-dom'
 import "react-datepicker/dist/react-datepicker.css"
 import DatePicker from 'react-datepicker'
 import Form from 'react-bootstrap/Form'
@@ -92,6 +92,9 @@ function Edit() {
                 </Form.Group>
                 <Button variant="primary" type='submit'>Submit</Button>{' '}
             </Form>
+            <Link to={'/continents'}>
+                    <Button variant="danger">Cancel</Button>
+                </Link>
         </>
 
     )

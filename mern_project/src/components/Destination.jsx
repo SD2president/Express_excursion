@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
-import Edit from './Edit'
+import Button from 'react-bootstrap/Button'
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Image from 'react-bootstrap/Image'
+import Row from 'react-bootstrap/Row'
+import Card from 'react-bootstrap/Card'
+
+
 
 //GETS A SINGLE DESTINATION FROM THE DB
 function Destination() {
@@ -35,23 +42,34 @@ function Destination() {
 
 
     return (
-        <div >
-            <p>{destination.name} </p>
-            <p>{destination.description} </p>
-            <p>{destination.continent_name} </p>
-            <p>{destination.country_name} </p>
-            <p>{destination.picture} </p>
-            <p>{destination.author} </p>
-            <p>{destination.date} </p>
-            <div>
-                <button onClick={deleteDestination}>DELETE</button>
-            </div>
-            <div>
+        < >
+            <h1>{destination.name} </h1>
+            <hr></hr>
+            <Row className="text-center">
+                <Col>
+                    <Card style={{ width: '30rem' }}>
+                        <Card.Body>
+                            <Card.Title>{destination.country_name}</Card.Title>
+                            <Card.Subtitle className="mb-2 text-muted">{destination.continent_name}</Card.Subtitle>
+                            <Card.Text>{destination.description}</Card.Text>
+                            <Card.Subtitle className="mb-2 text-muted">-{destination.author} visited on {destination.date_visited}</Card.Subtitle>
+                            <Link to={`/continents/${destination.continent_name}`}>Back to {destination.continent_name} destinations</Link>
+                        </Card.Body>
+                    </Card>
+                </Col>
+                <Col className="d-flex flex-row" >
+                    <Image src={destination.picture} rounded className="img-fluid" />
+                </Col>
+            </Row>
+            <Col className="d-flex flex-row">
                 <Link to={`/edit/${destination.name}`}>
-                    <button>Edit</button>
+                    <Button variant="success"><i className="fa-solid fa-pen-to-square"></i>  Edit</Button>
                 </Link>
-            </div>
-        </div>
+                <Button variant="danger" onClick={deleteDestination}><i className="fa-regular fa-trash-can"></i>  DELETE</Button>
+            </Col>
+
+
+        </>
     )
 }
 

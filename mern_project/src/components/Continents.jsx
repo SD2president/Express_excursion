@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Button from 'react-bootstrap/Button'
 
 function Continents() {
     let continentList = [
@@ -10,7 +11,6 @@ function Continents() {
         { id: 5, name: 'North America' },
         { id: 6, name: 'South America' }
     ]
-
 
 
 
@@ -27,7 +27,7 @@ function Continents() {
                 ))}
             </ul>
             <a href={`/newdestination`}>
-                <button>Add New Destination</button>  
+                <Button variant="primary">Add New Destination</Button>  
             </a>
         </div>
     )

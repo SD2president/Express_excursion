@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 import Col from 'react-bootstrap/Col'
-import Container from 'react-bootstrap/Container'
 import Image from 'react-bootstrap/Image'
 import Row from 'react-bootstrap/Row'
 import Card from 'react-bootstrap/Card'
@@ -13,10 +12,10 @@ import Card from 'react-bootstrap/Card'
 function Destination() {
     const navigate = useNavigate()
     const [destination, setDestination] = useState([])
-    const { name } = useParams()
+    const { name } = useParams() //uses the continent param
     const getDestination = async () => {
         try {
-            const findDestination = await fetch(`http://localhost:4000/destinations/${name}`)
+            const findDestination = await fetch(`${process.env.REACT_APP_SERVER_URL}/${name}`)
             const jsonData = await findDestination.json()
             setDestination(jsonData)
         } catch (Error) {
@@ -27,7 +26,7 @@ function Destination() {
     //DELETE DESTINATION FUNCTION
     const deleteDestination = async () => {
         try {
-            const deleteDestination = await fetch(`http://localhost:4000/destinations/${name}`,
+            await fetch(`http://localhost:4000/destinations/${name}`,
                 { method: "DELETE" })
             navigate('/continents') //redirects back to parent destination list
         } catch (Error) {
@@ -35,11 +34,9 @@ function Destination() {
         }
     }
 
-
     useEffect(() => {
         getDestination()
     }, [])
-
 
     return (
         < >
@@ -47,7 +44,7 @@ function Destination() {
             <hr></hr>
             <Row className="text-center">
                 <Col>
-                    <Card style={{ width: '30rem' }}>
+                    <Card style={{ width: '40rem' }}>
                         <Card.Body>
                             <Card.Title>{destination.country_name}</Card.Title>
                             <Card.Subtitle className="mb-2 text-muted">{destination.continent_name}</Card.Subtitle>
@@ -63,12 +60,10 @@ function Destination() {
             </Row>
             <Col className="d-flex flex-row">
                 <Link to={`/edit/${destination.name}`}>
-                    <Button variant="success"><i className="fa-solid fa-pen-to-square"></i>  Edit</Button>
+                    <Button variant="success" size="lg"><i className="fa-solid fa-pen-to-square"></i>  EDIT</Button>
                 </Link>
-                <Button variant="danger" onClick={deleteDestination}><i className="fa-regular fa-trash-can"></i>  DELETE</Button>
+                <Button variant="danger" size="" onClick={deleteDestination}><i className="fa-regular fa-trash-can"></i>  DELETE</Button>
             </Col>
-
-
         </>
     )
 }

@@ -1,7 +1,7 @@
 // DEPENDENCIES
 const destinations = require('express').Router()
 const db = require('../models')
-const { Destination } = db 
+const { Destination } = db
 
 // FIND ALL DESTINATIONS
 destinations.get('/', async (req, res) => {
@@ -18,10 +18,10 @@ destinations.get('/', async (req, res) => {
 destinations.get('/:name', async (req, res) => {
     try {
         const foundDestination = await Destination.findOne({
-            where: {name: req.params.name}        
+            where: { name: req.params.name }
         })
         res.status(200).json(foundDestination)
-    } catch(Error) {
+    } catch (Error) {
         console.log(Error)
         res.status(500).send('Oh no, could not find destination')
     }
@@ -35,7 +35,7 @@ destinations.post('/', async (req, res) => {
             message: 'Successfully created a new destination',
             data: newDestination
         })
-    } catch(Error) {
+    } catch (Error) {
         res.status(500).json(Error)
     }
 })
@@ -51,7 +51,7 @@ destinations.put('/:name', async (req, res) => {
         res.status(200).json({
             message: `Successfully updated ${updatedDestination} Destination`
         })
-    } catch(Error) {
+    } catch (Error) {
         res.status(500).json(Error)
     }
 })
@@ -68,7 +68,7 @@ destinations.delete('/:name', async (req, res) => {
         res.status(200).json({
             message: `Successfully deleted ${deletedDestination}`
         })
-    } catch(Error) {
+    } catch (Error) {
         res.status(500).json(Error)
     }
 })

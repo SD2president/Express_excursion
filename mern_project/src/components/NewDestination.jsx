@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useNavigate,Link } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import "react-datepicker/dist/react-datepicker.css"
 import DatePicker from 'react-datepicker'
 import Form from 'react-bootstrap/Form'
@@ -23,7 +23,7 @@ function NewDestination() {
     //finds all destinations in the database
     const getDestinations = async () => {
         try {
-            const findDestinations = await fetch(`http://localhost:4000/destinations`)
+            const findDestinations = await fetch(`${process.env.REACT_APP_SERVER_URL}/destinations`)
             const jsonData = await findDestinations.json()
             setDestinations(jsonData)
         } catch (Error) {
@@ -61,7 +61,7 @@ function NewDestination() {
             }
             //creates a new row in the db based on the form data
             const addedDestination = { name, continent_name, country_name, description, author, picture, date_visited }
-            const response = await fetch(`http://localhost:4000/destinations/`,
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}destinations/`,
                 {
                     method: "POST",
                     headers: { "content-type": "application/json" },
@@ -84,9 +84,9 @@ function NewDestination() {
                     <Form.Control id="name" name="name" value={name} onChange={(e) => setName(e.target.value)} required />
                 </Form.Group>
                 <Form.Group className="dropdown">
-                <div className="dropdown">
-                        <Form.Label htmlFor='continent_name'>Continent</Form.Label>  
-                        <select name='continent_name' id="continent_name" value={continent_name}  onChange={(e)=> setContinent_name(e.target.value)} >  
+                    <div className="dropdown">
+                        <Form.Label htmlFor='continent_name'>Continent</Form.Label>
+                        <select name='continent_name' id="continent_name" value={continent_name} onChange={(e) => setContinent_name(e.target.value)} >
                             <option value='' selected disabled hidden>Select a continent</option>
                             <option value="Africa">Africa</option>
                             <option value="Asia">Asia</option>
@@ -94,7 +94,7 @@ function NewDestination() {
                             <option value="Europe">Europe</option>
                             <option value="North America">North America</option>
                             <option value="South America">South America</option>
-                        </select>                    
+                        </select>
                     </div>
                 </Form.Group>
                 <Form.Group className="mb-3">
@@ -111,7 +111,7 @@ function NewDestination() {
                 </Form.Group>
                 <Form.Group className="mb-3">
                     <Form.Label htmlFor='picture'>Photo</Form.Label>
-                    <Form.Control id="picture" name="picture" value={picture} onChange={(e) => setPicture(e.target.value)} placeholder='Add picture url'/>
+                    <Form.Control id="picture" name="picture" value={picture} onChange={(e) => setPicture(e.target.value)} placeholder='Add picture url' />
                 </Form.Group>
                 <Form.Group className="mb-3">
                     <Form.Label htmlFor='date_visited'>Date Visited</Form.Label>
@@ -120,8 +120,8 @@ function NewDestination() {
                 <Button variant="primary" type='submit'>Submit</Button>{' '}
             </Form>
             <Link to={'/continents'}>
-                    <Button variant="danger">Cancel</Button>
-                </Link>
+                <Button variant="danger">Cancel</Button>
+            </Link>
         </>
     )
 }

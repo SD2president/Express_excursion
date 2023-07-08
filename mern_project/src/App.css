@@ -1,38 +1,150 @@
+/* tailwind */
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Nav */
+.navBar {
+  border-bottom: 1px solid black;
+}
+.link {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+  margin: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.link:hover {
+  color: rgb(255, 0, 0);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Container {
+  display: flex;
+  justify-content: space-between;
+}
+.logoimg {
+  width: 325px;
+  height: 75px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+#margR {
+  margin-right: 20px;
+}
+
+.links {
+  display: flex;
+  gap: 50px;
+  color: black;
+}
+
+/* Login Page */
+.login {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 75vh;
+}
+
+#logID {
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+  font-weight: 700;
+}
+
+.logForm {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: rgb(199, 199, 199);
+  width: 230px;
+  gap: 12px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+input {
+  padding: 5px;
+  width: 150px;
+  align-self: center;
+}
+
+button {
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(35, 108, 126);
+  margin-top: 10px;
+  cursor: pointer;
   color: white;
+  width: 75px;
+  align-self: center;
 }
 
-.App-link {
-  color: #61dafb;
+/* Home */
+
+
+/* About */
+
+.abCon {
+  margin-left: 500px;
+  margin-right: 500px;
+  text-align: center;
+  border: 2px solid black;
+  background-color: white;
+  border-radius: 8px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.abDiv {
+  background-color: rgb(199, 199, 199);
+  margin-top: 8rem;
+}
+
+.abTitle {
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+  font-weight: 700;
+}
+
+.ab {
+  font-size: 18px;
+  color: rgb(0, 0, 0);
+  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+}
+
+/* New */
+.newForm {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: rgb(199, 199, 199);
+  width: 500px;
+  gap: 12px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.newDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 75vh;
+}
+
+#newID {
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+  font-weight: 700;
+}
+
+.newIn {
+  width: 250px;
 }

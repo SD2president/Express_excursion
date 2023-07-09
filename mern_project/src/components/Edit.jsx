@@ -9,7 +9,7 @@ function Edit() {
     //GETS THE DESTINATION BY NAME FROM THE DATABASE TO USE TO SET INITIAL STATE FOR AUTOFILL
     const getDestination = async () => {
         try {
-            const findDestination = await fetch(`http://localhost:4000/destinations/${name}`)
+            const findDestination = await fetch(`${process.env.REACT_APP_SERVER_URL}/${name}`)
             const jsonData = await findDestination.json()
             setDestination(jsonData)
         } catch (Error) {

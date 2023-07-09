@@ -22,7 +22,7 @@ function NewDestination() {
     //finds all destinations in the database
     const getDestinations = async () => {
         try {
-            const findDestinations = await fetch(`http://localhost:4000/destinations`)
+            const findDestinations = await fetch(`${process.env.REACT_APP_SERVER_URL}/destinations`)
             const jsonData = await findDestinations.json()
             setDestinations(jsonData)
         } catch (Error) {
@@ -61,7 +61,7 @@ function NewDestination() {
             }
             //creates a new row in the db based on the form data
             const addedDestination = { name, continent_name, country_name, description, author, picture, date_visited }
-            const response = await fetch(`http://localhost:4000/destinations/`,
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}destinations/`,
                 {
                     method: "POST",
                     headers: { "content-type": "application/json" },

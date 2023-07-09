@@ -11,7 +11,7 @@ function Destinations() {
     //GET THE DESTINATIONS FROM THE DB WHERE ALL ARE FORM THE SAME CONTINENT
     const getDestinations = async () => {
         try {
-            const findDestinations = await fetch(`http://localhost:4000/continents/${name}`)
+            const findDestinations = await fetch(`${process.env.REACT_APP_SERVER_URL}/${name}`)
             const jsonData = await findDestinations.json()
             setDestinations(jsonData)
         } catch (Error) {

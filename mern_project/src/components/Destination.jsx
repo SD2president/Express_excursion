@@ -15,7 +15,7 @@ function Destination() {
     const { name } = useParams() //uses the continent param
     const getDestination = async () => {
         try {
-            const findDestination = await fetch(`http://localhost:4000/destinations/${name}`)
+            const findDestination = await fetch(`${process.env.REACT_APP_SERVER_URL}/${name}`)
             const jsonData = await findDestination.json()
             setDestination(jsonData)
         } catch (Error) {

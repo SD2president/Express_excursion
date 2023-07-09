@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 import './App.css';
 //Components
@@ -14,6 +16,11 @@ import About from './components/About'
 
 
 function App() {
+  //Sets document title
+  useEffect(() => {
+    document.title = "Express Excursions";
+  }, []);
+
   //Sets document title
   useEffect(() => {
     document.title = "Express Excursions";

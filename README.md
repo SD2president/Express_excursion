@@ -44,4 +44,8 @@
     <li>Utilize the comments section to ask questions or seek additional information from the review authors.
 <ol>
 
+<<<<<<< HEAD
 We hope you enjoy using Express Excursions to explore continents, discover travel destinations, and share your valuable reviews. Start your journey today and let the world hear about your exciting travel experiences!
+=======
+We hope you enjoy using Express Excursions to explore continents, discover travel destinations, and share your valuable reviews. Start your journey today and let the world hear about your exciting travel experiences!
+>>>>>>> 6dc1e30f889ba46ff5700983d6b54fea233f7ccf

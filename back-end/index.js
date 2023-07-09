@@ -6,6 +6,7 @@ const app = express()
 const cors = require('cors')
 const { Sequelize } = require('sequelize')
 
+
 //middleware
 app.use(express.json())
 app.use(cors())

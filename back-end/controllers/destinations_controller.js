@@ -14,7 +14,7 @@ destinations.get('/', async (req, res) => {
     }
 })
 
-// FIND A DESTINATION
+// FIND A DESTINATION 
 destinations.get('/:name', async (req, res) => {
     try {
         const foundDestination = await Destination.findOne({

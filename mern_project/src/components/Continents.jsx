@@ -22,7 +22,7 @@ function Continents() {
                 {continentList.map(continent => (
                     <li key={continent.id}>
                         <Link to={`/continents/${continent.name}`}>
-                        <i class="fa-solid fa-globe"></i> {continent.name}
+                        <i className="fa-solid fa-globe"></i> {continent.name}
                         </Link>
                     </li>
                 ))}

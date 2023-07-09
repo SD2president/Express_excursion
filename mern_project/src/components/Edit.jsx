@@ -9,7 +9,7 @@ function Edit() {
     //GETS THE DESTINATION BY NAME FROM THE DATABASE TO USE TO SET INITIAL STATE FOR AUTOFILL
     const getDestination = async () => {
         try {
-            const findDestination = await fetch(`http://localhost:4000/${name}`)
+            const findDestination = await fetch(`http://localhost:4000/destinations/${name}`)
             const jsonData = await findDestination.json()
             setDestination(jsonData)
         } catch (Error) {
@@ -39,7 +39,7 @@ function Edit() {
         e.preventDefault()
         try {
             const edited = { name, continent_name, country_name, description, author, date_visited, picture }
-            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/${name}`,
+            const response = await fetch(`http://localhost:4000/destinations/${name}`,
                 {
                     method: "PUT",
                     headers: { "content-type": "application/json" },

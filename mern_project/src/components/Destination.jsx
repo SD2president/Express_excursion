@@ -26,7 +26,7 @@ function Destination() {
     //DELETE DESTINATION FUNCTION
     const deleteDestination = async () => {
         try {
-            await fetch(`${process.env.REACT_APP_SERVER_URL}/${name}`,
+            await fetch(`http://localhost:4000/destinations/${name}`,
                 { method: "DELETE" })
             navigate('/continents') //redirects back to parent destination list
         } catch (Error) {

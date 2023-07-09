@@ -5,7 +5,7 @@ const db = require('../models')
 const {continent} = db
 const { Op } = require('sequelize')
 
-// Best travel locations in continent 
+// Best travel locations in Continent
 continent.get("/", async(req,res) => {
     try{
         const continent = await continent.findAll({

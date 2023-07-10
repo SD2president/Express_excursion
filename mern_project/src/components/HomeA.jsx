@@ -2,8 +2,10 @@ import React from "react";
 
 const HomeA = () => {
     return (
-        <div>
-            <h1>H:A</h1>
+        <div className="flex justify-center mt-5">
+            <a href="/new">
+                <h1>Discuss Your Journey</h1>
+            </a>
         </div>
     );
 };

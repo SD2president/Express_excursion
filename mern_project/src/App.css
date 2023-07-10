@@ -1,31 +1,50 @@
-/* tailwind */
-
 .App {
   text-align: center;
 }
 
+.body {
+  height: 81px;
+  margin-top: -3px;
+}
+
+.mainDiv {
+  margin-top: -32px;
+  padding-top: 10px;
+}
+
 /* Nav */
-.navBar {
-  border-bottom: 1px solid black;
+.navbar {
+  border: 3px solid black;
+  border-radius: 8px;
+  margin-top: 5px;
+  margin-left: 3px;
+  margin-right: 3px;
+  background-color: rgb(255, 255, 255);
+  position: sticky;
+  top: 0;
 }
 .link {
   text-decoration: none;
-  color: black;
+  color: rgb(0, 0, 0);
   font-size: 18px;
+  font-weight: 400;
   font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
   margin: auto;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 .link:hover {
-  color: rgb(255, 0, 0);
+  color: rgb(204, 204, 204);
+
 }
 
-.Container {
+.navbar-container {
   display: flex;
   justify-content: space-between;
 }
 .logoimg {
-  width: 325px;
+  width: 150px;
   height: 75px;
   cursor: pointer;
   margin-left: 20px;
@@ -37,9 +56,18 @@
 
 .links {
   display: flex;
-  gap: 50px;
   color: black;
 }
+
+.logo {
+  display: flex;
+  color: black;
+}
+
+#navTitle:hover {
+  color: black;
+}
+
 
 /* Login Page */
 .login {
@@ -143,6 +171,8 @@ button {
   align-items: center;
   justify-content: center;
   height: 75vh;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
 }
 
 #newID {
@@ -159,3 +189,5 @@ button {
 #fileID {
   margin-left: 100px;
 }
+
+/* Feed */

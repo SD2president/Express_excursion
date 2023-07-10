@@ -4,17 +4,20 @@ import Navbar from './components/Navbar';
 import Login from './views/login';
 import Home from './views/home';
 import New from './views/new';
-import Register from './views/register';
 import Show from './views/show';
 import About from './views/about';
 import Feed from './views/feed';
+import Footer from './components/Footer';
 import './App.css'
 
 const Layout = () => {
   return (
-    <div>
-      <Navbar/>
-      <Outlet/>
+    <div className='body'>
+      <Navbar />
+      <div className='mainDiv'>
+        <Outlet />
+      </div>
+        <Footer />
     </div>
   );
 };
@@ -22,35 +25,31 @@ const Layout = () => {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout/>,
+    element: <Layout />,
     children: [
       {
         path: "/",
-        element: <Home/>
+        element: <Home />
       },
       {
         path: "/login",
-        element: <Login/>
+        element: <Login />
       },
       {
         path: "/new",
-        element: <New/>
-      },
-      {
-        path: "/register",
-        element: <Register/>
+        element: <New />
       },
       {
         path: "/destination/:id",
-        element: <Show/>
+        element: <Show />
       },
       {
         path: "/about",
-        element: <About/>
+        element: <About />
       },
       {
         path: "/destinations",
-        element: <Feed/>
+        element: <Feed />
       }
     ]
   }
@@ -60,7 +59,7 @@ function App() {
   return (
     <div className="App">
       <div>
-        <RouterProvider router={router}/>
+        <RouterProvider router={router} />
       </div>
     </div>
   );

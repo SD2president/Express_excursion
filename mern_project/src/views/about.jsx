@@ -3,12 +3,10 @@ import React from "react";
 const About = () => {
     return(
     <div className="abDiv">
-        <br/>
         <h1 className="abTitle">
             About Us
         </h1>
         <div className="abCon">
-        <br/>
         <p className="ab">
         Welcome to our travel blog! We are passionate wanderers who believe that traveling is an extraordinary journey that enriches our lives in countless ways. Our website is dedicated to sharing our adventures, experiences, and insights with fellow travel enthusiasts like you.
         </p>
@@ -30,6 +28,8 @@ const About = () => {
         <p className="ab">
         Thank you for being a part of our travel community. Together, let's embark on a world of discovery and create a tapestry of wanderlust!
         </p>
+        <br/>
+        <img  id='logoAb' src='/images/logoOnly.png' alt="Express Excrusions Logo"></img>
         </div>
     </div>
     )

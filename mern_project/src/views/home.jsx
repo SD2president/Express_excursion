@@ -1,26 +1,18 @@
 import React from "react";
-import Card from "../components/Card";
+import HomeA from "../components/HomeA";
+import HomeB from "../components/HomeB";
 
 const Home = () => {
-    const cards = [
-        { title: "Texas, USA", image: "https://dummyimage.com/400x250/000/fff.jpg", date: "1/1/2024"},
-        { title: "Texas, USA", image: "https://dummyimage.com/400x250/000/fff.jpg", date: "1/1/2024"},
-        { title: "Texas, USA", image: "https://dummyimage.com/400x250/000/fff.jpg", date: "1/1/2024"},
-        { title: "Texas, USA", image: "https://dummyimage.com/400x250/000/fff.jpg", date: "1/1/2024"},
-        { title: "Texas, USA", image: "https://dummyimage.com/400x250/000/fff.jpg", date: "1/1/2024"},
-        { title: "Texas, USA", image: "https://dummyimage.com/400x250/000/fff.jpg", date: "1/1/2024"},
-        { title: "Texas, USA", image: "https://dummyimage.com/400x250/000/fff.jpg", date: "1/1/2024"},
-        { title: "Texas, USA", image: "https://dummyimage.com/400x250/000/fff.jpg", date: "1/1/2024"},
-        { title: "Texas, USA", image: "https://dummyimage.com/400x250/000/fff.jpg", date: "1/1/2024"}
-    ]
-    return(
-    <div className="pt-3">
-        <div className="grid grid-cols-1 gap-4">
-            {cards.map((card) => (
-            <Card title={card.title} image={card.image} date={card.date}/>
-            ))}
+    return (
+         //home container
+        <div>
+            <div>
+                <HomeA/>
+            </div>
+            <div>
+                <HomeB/>
+            </div>
         </div>
-    </div>
     )
 }
 export default Home

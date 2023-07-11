@@ -24,6 +24,9 @@ function Feed() {
   ]
   return (
     <div>
+      <h1 className="FeedTitle">
+        Country: USA
+      </h1>
       <div className="flex justify-center mt-8">
         <div className="grid grid-cols-3 gap-y-5 gap-x-5" id="homeGrid">
           {cards.map((card) => (

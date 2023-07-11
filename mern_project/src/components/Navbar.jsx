@@ -23,6 +23,12 @@ const Navbar = () => {
                         </h3>
 
                     </Link>
+                    <Link className="link" to="/about">
+                        <h3>
+                            About
+                        </h3>
+
+                    </Link>
                     <Link className="link" to="/destinations">
                         <h3>
                             Destinations

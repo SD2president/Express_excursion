@@ -156,6 +156,8 @@ button {
 
 #logoAb {
   width: 150px;
+  margin-left: 15rem;
+  margin-right: 10rem;
 }
 
 /* New */
@@ -200,6 +202,7 @@ button {
 /* Feed */
 .FeedTitle {
   font-size: 40px;
+  font-weight: 700;
 }
 
 /* Footer */

@@ -185,6 +185,7 @@ button {
   color: rgb(0, 0, 0);
   font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
   font-weight: 700;
+  margin-top: -9rem;
 }
 
 .newIn {
@@ -194,6 +195,7 @@ button {
 #fileID {
   margin-left: 100px;
 }
+
 
 /* Feed */
 .FeedTitle {

@@ -38,9 +38,9 @@ const Home = () => {
                             </div>
                             <div className="content">
                                 <Link to={`/post/${post.id}`}>
+                                    <h1>{post.author}</h1>
                                     <h1>{post.title}</h1>
-                                    <p>{post.description}</p>
-                                    <button>Read More</button>
+                                    <button className="readButton">Read More</button>
                                 </Link>
                             </div>
                         </div>

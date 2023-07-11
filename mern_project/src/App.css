@@ -120,6 +120,9 @@ button {
   font-weight: 700;
 }
 
+.readButton {
+  width: 100px;
+}
 
 /* About */
 
